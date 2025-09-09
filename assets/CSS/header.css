@@ -1,0 +1,429 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, sans-serif;
+    
+}
+
+.main {
+    background-color: #1e1e1e;
+    padding: 10px 0;
+    margin-top: -60px;
+}
+/* header css start here */
+ .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 40px;
+        padding-bottom: 0%;
+        background: #000;
+        color: #fff;
+        position: relative;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      /* Center links */
+      .nav-links {
+        display: flex;
+        gap: 7px;
+        flex: 1;
+        justify-content: center;
+        transition: max-height .3s ease;
+      }
+
+      .nav-links li {
+        list-style: none;
+        position: relative;
+      }
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 8px;
+        display: block;
+        font-weight: 500;
+      }
+
+      .nav-links li:hover > a {
+        color: #0af;
+      }
+
+      /* Dropdown hidden by default */
+      .nav-links ul {
+        display: none; /* hidden until hover */
+        position: absolute;
+        top: 40px;
+        left: -70%;
+        background: #111;
+        border-radius: 4px;
+        padding: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        width: 500px;
+        z-index: 10;
+      }
+
+      .nav-links.show {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Show dropdown on hover in 2 columns */
+      .nav-links li:hover > ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .nav-links ul li {
+        margin-bottom: 6px;
+      }
+
+      .nav-links ul li:last-child {
+        margin-bottom: 0;
+      }
+
+      .nav-links ul a:hover {
+        color: #0af;
+      }
+
+      /* Right side */
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-right button {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .nav-right img.flag {
+        width: 18px;
+      }
+
+      .nav-right a {
+        text-decoration: none !important;
+        color: #fff;
+      }
+
+      /* Mega-menu */
+      .mega-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #111;
+        color: #fff;
+        padding: 20px;
+        border-radius: 6px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        display: none;
+        width: 90%;
+        max-width: 1000px;
+        z-index: 1000;
+      }
+
+      .mega-menu.show {
+        display: block;
+      }
+
+      .mega-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+
+      .mega-col h4 {
+        margin-bottom: 8px;
+        font-size: 16px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 4px;
+      }
+
+      .mega-col ul {
+        list-style: none;
+        padding-left: 0%;
+      }
+
+      .mega-col li {
+        margin-bottom: 6px;
+        white-space: nowrap;
+      }
+
+      .mega-col a {
+        color: #ddd;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .mega-col a:hover {
+        color: #0af;
+      }
+
+      /* Close button only for mega menu */
+      .close-btn {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        float: right;
+        margin: 5px;
+      }
+      .mega-menu .close-btn {
+        display: block;
+        text-align: right;
+        width: 5%;
+        position: relative;
+        top: -33px;
+      }
+      /* Close button for hamburger nav */
+      .nav-links .close-btn {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: right;
+        width: 100%;
+        padding: 10px 15px;
+        display: none; /* default hidden */
+      }
+
+      /* Show only when hamburger menu is visible */
+      .nav-links.show .close-btn {
+        display: block;
+      }
+
+      /* Hamburger Mega Menu */
+      .hamburger-mega-menu {
+        position: absolute;
+        top: 101%;
+        right: 2%;
+        width: 20%;
+        background: #111;
+        color: #fff;
+        padding: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        display: none;
+        z-index: 1000;
+      }
+
+      .hamburger-mega-menu.show {
+        display: block;
+      }
+
+      .hamburger-mega-content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+      }
+
+      .hamburger-mega-col h4 {
+        margin-bottom: 8px;
+        font-size: 16px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 4px;
+      }
+
+      .hamburger-mega-col ul {
+        list-style: none;
+        padding-left: 0%;
+      }
+
+      .hamburger-mega-col li {
+        margin-bottom: 6px;
+        position: relative;
+      }
+
+      .hamburger-mega-col a {
+        color: #ddd;
+        text-decoration: none;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .hamburger-mega-col a:hover {
+        color: #0af;
+      }
+
+      /* Dropdown styles for hamburger mega menu */
+      .hamburger-dropdown {
+        display: none;
+        padding-left: 15px;
+      
+        margin-top: 5px;
+      }
+
+      .hamburger-dropdown.show {
+        display: block;
+      }
+
+      .hamburger-dropdown li {
+        margin-bottom: 5px;
+      }
+/* header css end here */
+
+
+#preloader {
+            width: 100%;
+            height: 100vh;
+            background-image: url('preloadbg.png');
+            background-size: 100% 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #preloader-image {
+            width: 100%;
+            height: 100vh;
+            animation: fadeInOut 2s infinite ease-in-out;
+        }
+
+        #content {
+            display: none;
+        }
+
+        /* Fade In and Fade Out animation */
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+@media (min-width:0px) and (max-width: 767px) {
+.navbar {
+          flex-wrap: wrap;
+          padding: 12px 20px;
+        }
+        .logo img {
+          height: 30px !important;
+        }
+        .nav-links {
+          display: none;
+        }
+        .nav-links.show {
+          max-height: 600px;
+        }
+        .nav-links li {
+          width: 100%;
+          border-bottom: 1px solid #222;
+        }
+        .nav-links ul {
+          position: static;
+          background: #111;
+          margin-left: 0;
+          display: none !important;
+          padding: 10px;
+        }
+        .nav-links li.open > ul {
+          display: block !important;
+        }
+        .nav-links li > a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        /* Mega menu stacks */
+        .mega-menu {
+          width: 100%;
+          margin-top: 10px;
+        }
+        .mega-content {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .mega-col {
+          flex: 1 1 100%;
+        }
+        /* Hamburger mega menu on mobile */
+        .hamburger-mega-menu {
+          width: 90%;
+          right: 5%;
+          left: 5%;
+        }
+        .hamburger-mega-content {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        /* Show hamburger */
+        .hamburger {
+          display: block;
+          font-size: 22px;
+          background: none;
+          border: none;
+          color: #fff;
+          cursor: pointer;
+          margin-left: auto;
+        }
+        .nav-right {
+          order: 2;
+          width: 100%;
+          justify-content: flex-end;
+          margin-top: 8px;
+        }
+    }
+
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+ .nav-links {
+          display: none;
+        }
+        .nav-links a {
+          font-size: 14px;
+        }
+        .nav-right button {
+          font-size: 14px;
+        }
+        .crownbtn {
+          margin-left: 0%;
+        }
+        .nav-right {
+          display: flex;
+          align-items: center;
+          gap: 22px;
+        }
+
+        .mega-content {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        /* Hamburger mega menu on tablet */
+        .hamburger-mega-menu {
+          width: 40%;
+          right: 5%;
+        }
+        
+        /* Show hamburger on tablet */
+        .hamburger {
+          display: block !important;
+        }
+    }
